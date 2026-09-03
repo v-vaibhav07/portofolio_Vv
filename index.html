@@ -223,6 +223,16 @@
   .scene-link{ display:inline-flex; align-items:center; gap:7px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); margin-bottom:22px; border-bottom:1px solid transparent; transition:border-color .2s ease; }
   .scene-link:hover{ border-color:var(--amber); }
 
+  .scene-links{ display:flex; align-items:center; gap:18px; margin-bottom:22px; }
+  .scene-links .scene-link{ margin-bottom:0; }
+  .gh-link{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; border:1px solid var(--line); border-radius:4px;
+    color:var(--muted); transition:all .25s ease;
+  }
+  .gh-link svg{ width:15px; height:15px; }
+  .gh-link:hover{ color:var(--amber); border-color:var(--amber); }
+
   .stat .num{ font-family:'Bebas Neue', sans-serif; font-size:46px; color:var(--ink); letter-spacing:0.01em; }
   .stat .num .amb{ color:var(--amber); }
   .stat .label{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--muted); margin-top:10px; line-height:1.6; }
@@ -421,7 +431,7 @@
     <div class="sec-head reveal">
       <span class="sec-num">01</span>
       <h2>The Reel</h2>
-      <span class="sec-sub">three builds, in order of scale</span>
+      <span class="sec-sub">four builds, in order of scale</span>
     </div>
 
     <div class="scene reveal">
@@ -429,11 +439,17 @@
       <h3>Velocity</h3>
       <div class="credit">Enterprise-scale multi-vehicle mobility platform</div>
       <a class="scene-link" href="https://velocity-three-xi.vercel.app/" target="_blank" rel="noopener">Launch live ↗</a>
+      <div class="scene-links">
+        <a class="gh-link" href="https://github.com/v-vaibhav07/Velocity" target="_blank" rel="noopener" aria-label="GitHub repo" title="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.28 9.28 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+      </div>
       <div class="scene-grid">
         <ul class="p-desc">
-          <li>A production-grade booking platform covering bikes, autos, cars, loading vehicles, and heavy trucks — with secure auth, role-based access, and REST APIs built to scale.</li>
-          <li>Real-time ride allocation and live location tracking, with geospatial partner matching powered by MongoDB 2dsphere indexes.</li>
-          <li>Video KYC, Razorpay payments, and Gemini-powered AI features, all coordinated over Socket.io in a modular architecture.</li>
+          <li>A multi-vehicle booking platform spanning bikes, autos, cars, loading vehicles, and heavy trucks, with dedicated customer, partner, and admin experiences.</li>
+          <li>A split-state architecture: durable data (bookings, KYC, earnings) runs through REST + MongoDB, while ephemeral data (live location, live status, live queue counts) runs entirely through a standalone Socket.io server.</li>
+          <li>A three-gate partner verification pipeline — identity, video KYC, vehicle documents, admin sign-off — where each gate is independent and can fail without blocking the others.</li>
+          <li>Geospatial partner matching via MongoDB 2dsphere indexes, with a route and ETA engine that shows live distance and time before a customer confirms a booking.</li>
         </ul>
         <div class="hud">
           <div class="hh">TELEMETRY</div>
@@ -452,10 +468,17 @@
       <h3>Smart School Management Platform</h3>
       <div class="credit">Full-stack, multi-role school operations system</div>
       <a class="scene-link" href="https://school-sdjps.vercel.app/" target="_blank" rel="noopener">Launch live ↗</a>
+      <div class="scene-links">
+        <a class="gh-link" href="https://github.com/v-vaibhav07/School-sdjps" target="_blank" rel="noopener" aria-label="GitHub repo" title="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.28 9.28 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+      </div>
       <div class="scene-grid">
         <ul class="p-desc">
           <li>A role-based platform for students, teachers, parents, and administrators, backed by a normalized PostgreSQL database — 40+ tables, optimized queries.</li>
           <li>Real-time announcements, messaging, notifications, transport tracking, and fee management, all running over WebSockets.</li>
+          <li>Admin AI Smart Insights that automatically analyze school data to surface attendance trends, at-risk students, and fee collection status.</li>
+          <li>A built-in AI chat assistant in the student panel for academic queries and support, alongside real-time class chat and announcements.</li>
         </ul>
         <div class="hud">
           <div class="hh">TELEMETRY</div>
@@ -474,13 +497,49 @@
     </div>
 
     <div class="scene reveal">
-      <div class="scene-tag">SCENE 03 <span class="badge" style="border-color:var(--blue); color:var(--blue);">GITHUB</span></div>
+      <div class="scene-tag">SCENE 03 <span class="badge">LIVE</span></div>
+      <h3>RecoverAI</h3>
+      <div class="credit">AI-powered payment recovery platform</div>
+      <a class="scene-link" href="https://recover-ai-gold.vercel.app/" target="_blank" rel="noopener">Launch live ↗</a>
+      <div class="scene-links">
+        <a class="gh-link" href="https://github.com/v-vaibhav07/RecoverAI" target="_blank" rel="noopener" aria-label="GitHub repo" title="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.28 9.28 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+      </div>
+      <div class="scene-grid">
+        <ul class="p-desc">
+          <li>A full-stack system that detects failed and at-risk payments, diagnoses why they failed, and automatically runs recovery campaigns across channels to win the revenue back.</li>
+          <li>A pipeline of nine OpenRouter-powered AI agents — prediction, failure analysis, decisioning, execution, monitoring, outcome tracking, explainability, revenue analysis, and customer communication — working end-to-end on live payment and subscription data.</li>
+          <li>Every AI decision is logged and explainable, not a black box: merchants can see exactly why a case got a discount offer instead of a retry, or why it was escalated.</li>
+          <li>A merchant dashboard visualizes recovery cases, campaigns, payment failures, and subscriptions, backed by a relational schema of 25+ models tracking each case from failure to recovered revenue.</li>
+        </ul>
+        <div class="hud">
+          <div class="hh">TELEMETRY</div>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span>
+            <span class="tag">Tailwind CSS</span><span class="tag">Framer Motion</span><span class="tag">Recharts</span>
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span>
+            <span class="tag">Prisma</span><span class="tag">Supabase</span><span class="tag">OpenRouter</span>
+          </div>
+          <div class="hh" style="margin-top:18px;">DEMO ACCESS</div>
+          <div class="demo-creds mono">
+            <div class="dc-row"><span class="dc-role">Login</span><span>vaibhavyadav7july@gmail.com</span><span>123456</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene reveal">
+      <div class="scene-tag">SCENE 04 <span class="badge" style="border-color:var(--blue); color:var(--blue);">GITHUB</span></div>
       <h3>Simplex Assembler Emulator</h3>
       <div class="credit">Built under the guidance of Prof. Jimson Mathew</div>
       <a class="scene-link" href="https://github.com/v-vaibhav07/simplex-assembler-emulator" target="_blank" rel="noopener">View repo ↗</a>
       <div class="scene-grid">
         <ul class="p-desc">
-          <li>A two-pass assembler written in C++ that converts Simplex assembly code directly into machine code — symbol resolution first, code generation second.</li>
+          <li>A two-pass assembler for the SIMPLEX instruction set, converting assembly source into machine code across a symbol-resolution pass and a code-generation pass.</li>
+          <li>Generates object files (.o), listing files (.lst), and error logs (.log) for every assembled program, alongside a separate emulator that executes the resulting machine code.</li>
+          <li>Verified against classic algorithms — bubble sort, factorial, and summation — assembled and run end-to-end to confirm correct output.</li>
+          <li>Built entirely in C++ with no external dependencies, compiled and run straight from the command line.</li>
         </ul>
         <div class="hud">
           <div class="hh">TELEMETRY</div>
@@ -503,7 +562,7 @@
       <div class="stat"><div class="num"><span class="amb">AIR</span> 4795</div><div class="label">JEE Advanced, out of 1.8 lakh+ candidates</div></div>
       <a class="stat" href="https://www.codechef.com/users/v_vaibhav07" target="_blank" rel="noopener">
         <span class="stat-icon">CC</span>
-        <div class="num">1512</div><div class="label">CodeChef rating — Global Rank 2875 in Starters 229 (Rated)</div>
+        <div class="num">1631</div><div class="label">CodeChef rating — Global Rank 2875 in Starters 229 (Rated)</div>
         <span class="stat-arrow">VIEW ↗</span>
       </a>
       <a class="stat" href="https://codeforces.com/profile/v_vaibhav" target="_blank" rel="noopener">
@@ -513,7 +572,7 @@
       </a>
       <a class="stat" href="https://leetcode.com/u/v_vaibhav/" target="_blank" rel="noopener">
         <span class="stat-icon">LC</span>
-        <div class="num">1696</div><div class="label">LeetCode contest rating, 220+ problems solved</div>
+        <div class="num">1767</div><div class="label">LeetCode contest rating, 300+ problems solved</div>
         <span class="stat-arrow">VIEW ↗</span>
       </a>
       <div class="stat"><div class="num">450<span class="amb">+</span></div><div class="label">Problems solved across competitive programming platforms</div></div>
